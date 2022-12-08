@@ -19,7 +19,7 @@ namespace AvaloniaApplicationTest {
             }
             catch (Exception) {
                 // return new JsonObject();
-                return JsonNode.Parse(@"{""website"":[{""name"":""测试网站"",""folder"":"""",""port"":60000}]}" );
+                return JsonNode.Parse(@"{}" );
             }
         }
 
