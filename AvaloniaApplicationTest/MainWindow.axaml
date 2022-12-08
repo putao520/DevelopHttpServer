@@ -1,0 +1,58 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="80"
+        x:Class="AvaloniaApplicationTest.MainWindow"
+        Title="开发服务器工具"
+		TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+		SizeToContent="WidthAndHeight"
+		CanResize="False"
+		>
+
+	<Panel>
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					BackgroundSource="Digger"
+					TintColor="Black"
+					TintOpacity="1"
+					MaterialOpacity="0.65" />
+				
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+		<StackPanel>
+			<TextBlock Text="网站方案"/>
+			<ComboBox SelectionChanged="siteChangeHandle" Name="FolderArray" AutoScrollToSelectedItem="True" Width="300">
+				<ComboBox.ItemTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Text="方案名称"/>
+			<WrapPanel>
+				<TextBox Name="CurrentName"
+						 FontFamily="Microsoft YaHei,Simsun,苹方-简,宋体-简"
+						 Watermark="网站名"
+						 Width="208"/>
+				<TextBlock Text="端口" VerticalAlignment="Center"/>
+				<TextBox Name="CurrentPort" Text="50080" />
+			</WrapPanel>
+			<TextBlock Text="静态文件夹"/>
+			<WrapPanel>
+				<TextBox Name="CurrentFolder"
+						 FontFamily="Microsoft YaHei,Simsun,苹方-简,宋体-简"
+						 Watermark="选择静态服务文件夹"
+						 Height="20"
+						 Width="270"
+						 HorizontalAlignment="Left"
+						 />
+				<Button Name="FolderSelectButton" Click="SelectFolderHandle" Content="..." HorizontalAlignment="Right"/>
+			</WrapPanel>
+			<WrapPanel>
+				<Button Content="保存" Width="50" Margin="5" Click="AddSiteHandle" VerticalAlignment="Center"/>
+				<Button Content="删除" Width="50" Margin="5" Click="DeleteSiteHandle" VerticalAlignment="Center"/>
+				<Button Content="开启服务" Margin="5" Click="ServiceControlHandle" VerticalAlignment="Center" />
+			</WrapPanel>
+		</StackPanel>
+	</Panel>
+</Window>
